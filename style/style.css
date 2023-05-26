@@ -1,0 +1,36 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.background-primary {
+    background: #00A445;
+}
+
+.color-primary {
+    color: #00A445;
+}
+
+.carousel-item{
+    height: 40rem;
+    color: white;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
