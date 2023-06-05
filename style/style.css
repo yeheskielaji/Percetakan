@@ -34,3 +34,46 @@ height: 100%;
 body {
     font-family: 'Montserrat', sans-serif;
 }
+@media only screen and (min-width:451px){
+.login-min{
+    display: none !important;
+}
+}
+
+@media only screen and (max-width:450px){
+    .navbar-nav{
+        text-align: center;
+        background-color: #00A445;
+    }
+    .carousel-item img{
+        width: 450px;
+    }
+    .carousel-all{
+       height: 200px;
+    }
+    #produk{
+        width: 450px;
+    }
+    .card{
+        width: 180px !important;
+
+    }
+    .foto-produk{
+        height: 150px !important;
+    }
+    .card h5{
+        font-size: 16px;
+    }
+    .card h6{
+        font-size: 12px;
+    }
+    .penjelasan{
+        font-size: 12px;
+    }
+    .card button{
+        font-size: 12px;
+    }
+    .login-max{
+        display: none !important;
+    }
+}

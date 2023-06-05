@@ -16,6 +16,9 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php" style="font-weight:bolder; color:#00A445;">
         <img src="asset/logo putih.png" alt="logo" style="height: 25px; margin-top: -7px; padding-left: 4px;"></a>
+      <a class="login-min d-flex" href="login.php" style="text-decoration: none;">
+        <button type="button" class="btn btn-outline-light">Login</button>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,13 +37,13 @@
             <a class="nav-link text-white " href="riwayat.php">Riwayat</a>
           </li>
         </ul>
-        <a class="d-flex" href="login.php" style="text-decoration: none;">
+        <a class="login-max d-flex" href="login.php" style="text-decoration: none;">
           <button type="button" class="btn btn-outline-light">Login</button>
         </a>
       </div>
     </div>
   </nav>
-  <div class="container d-flex justify-content-center align-item-center">
+  <div class="carousel-all container d-flex justify-content-center align-item-center">
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="height:200px; margin: 90px 50px 130px; margin-left: 32px; ">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
@@ -78,13 +81,13 @@
           ?>
             <div class="col">
               <div class="card" style="width: 18rem;">
-                <div class="m-2 p-1" style="height:270px;">
+                <div class="foto-produk m-2 p-1" style="height:270px;">
                   <img src="img/<?php echo $data['foto']; ?>" class="card-img-top">
                 </div>
                 <div class="card-body">
                   <h5 class="card-title"><?= $data['name']; ?></h5>
                   <h6 class="card-title">Rp. <?= number_format($data['price'], 0, "", ".") ?></h6>
-                  <div class="container py-2" style="height:140px;">
+                  <div class="penjelasan container py-2" style="height:140px;">
                     <p class="card-text"><?= $data['penjelasan']; ?></p>
                   </div>
                   <a href=index_admin_edit.php>
