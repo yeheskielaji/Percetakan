@@ -16,11 +16,11 @@ height: 100%;
 }
 
 .background-primary {
-    background: #00A445;
+    background: white;
 }
 
 .color-primary {
-    color: #00A445;
+    color: white;
 }
 
 .carousel-item{
@@ -74,6 +74,9 @@ body {
         font-size: 12px;
     }
     .login-max{
+        display: none !important;
+    }
+    .nav-large{
         display: none !important;
     }
 }
