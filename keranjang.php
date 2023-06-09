@@ -81,8 +81,8 @@ if (empty($_SESSION['username'])) {
                         </div>
                         <div class="row justify-content-center pt-2">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $data['keranjangid'] ?>">edd</button>
-                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdroph<?= $data['keranjangid'] ?>"><img src="img/sampah.svg" width="18px"></button>
+                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $data['keranjangid'] ?>"><img src="img/edit.png" width="18px"></button>
+                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdroph<?= $data['keranjangid'] ?>"><img src="img/hapus.png" width="18px"></button>
                             </div>
 
                             <!-- modal -->
