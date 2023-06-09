@@ -1,5 +1,5 @@
 ---
 deployment:
 tasks:
-- export DEPLOYPATH=/home/percet16/public_html/git
+- export DEPLOYPATH=/home/percet16/repositories/Percetakan
 - /bin/cp -r * $DEPLOYPATH
