@@ -146,7 +146,7 @@ if (empty($_SESSION['username'])) {
             </div>
         </div>
 
-        <div class="container fixed-bottom bg-white pb-3">
+        <div class="container fixed-bottom bg-white pb-5">
                         <div class="row d-flex justify-content-center">
                             <div class="col-10">
                                 <p class="card-text">
