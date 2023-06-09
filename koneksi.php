@@ -1,8 +1,8 @@
 <?php
     $hostname   = "localhost:3306"; //bawaan
-    $username   = "percet16@localhost"; //bawaan
-    $password   = ""; //kosong
-    $database   = "percet16_wp712"; //nama database yang akan dikoneksikan
+    $username   = "percet16_admin"; //bawaan
+    $password   = "xg$*d[LS~{E^"; //kosong
+    $database   = "percet16_percetakan"; //nama database yang akan dikoneksikan
 
     $connect    = new mysqli($hostname, $username, $password, $database); //query koneksi
 
