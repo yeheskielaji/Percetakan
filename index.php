@@ -13,31 +13,13 @@
 </head>
 
 <body>
-  <nav class="navbar nav-large fixed-top navbar-expand-lg" style="height:60px; background: white;">
+  <nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php" style="font-weight:bolder;">
         <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
       <a class="login-min d-flex" href="login.php" style="text-decoration: none;">
         <button type="button" class="btn btn-outline-warning">Login</button>
       </a>
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px;">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item" style="color: #00A445;">
-            <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white " href="index.php#produk">Produk</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white " href="keranjang.php">Keranjang</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white " href="riwayat.php">Riwayat</a>
-          </li>
-        </ul> -->
     </div>
     </div>
   </nav>
@@ -59,22 +41,17 @@
           while ($data = mysqli_fetch_array($query)) {
           ?>
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <div class="foto-produk m-2 p-1" style="height:270px;">
+            <a href=index_admin_edit.php style="text-decoration: none;">
+              <div class="card mx-auto" style="width: 18rem;">
+                <div class="foto-produk m-2 p-1" style="height:110px;">
                   <img src="img/<?php echo $data['foto']; ?>" class="card-img-top">
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="color: black;">
                   <h5 class="card-title"><?= $data['name']; ?></h5>
-                  <h6 class="card-title">Rp. <?= number_format($data['price'], 0, "", ".") ?></h6>
-                  <div class="penjelasan container py-2" style="height:140px;">
-                    <p class="card-text"><?= $data['penjelasan']; ?></p>
-                  </div>
-                  <a href=index_admin_edit.php>
-                    <button type="button" class="btn btn-primary pt-1 pb-1" style="background-color: #00A445; width: 80%;">
-                      Masukkan Keranjang
-                    </button></a>
+                  <h6 class="card-title" >Rp. <?= number_format($data['price'], 0, "", ".") ?></h6>
                 </div>
               </div>
+              </a>
               <br>
             </div>
           <?php } ?>
@@ -84,11 +61,27 @@
   </div>
 
 
-  <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 mt-5 background-primary">
-    <div class="text-white mb-3 mb-md-0">
-      Copyright © 2022. All rights reserved.
+<nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
+  <div class="container text-center ">
+    <div class="row gap-5 mx-auto" style="font-size:18px;">
+      <div class="col">
+      <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link" href=""><i class="bi bi-bell"></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link " href=""><i class="bi bi-plus"></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link" href="riwayat.php"><i class="bi bi-gear"></i></a>
+      </div>
     </div>
   </div>
+</nav>
 </body>
 
 

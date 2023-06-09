@@ -16,11 +16,11 @@ height: 100%;
 }
 
 .background-primary {
-    background: white;
+    background:#F1C40F;
 }
 
 .color-primary {
-    color: white;
+    color: #F1C40F;
 }
 
 .carousel-item{
@@ -34,32 +34,27 @@ height: 100%;
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
 @media only screen and (min-width:451px){
 .login-min{
     display: none !important;
 }
 }
 
-@media only screen and (max-width:450px){
+@media only screen and (max-width:430px){
     .navbar-nav{
         text-align: center;
         background-color: #00A445;
     }
-    .carousel-item img{
-        width: 450px;
-    }
-    .carousel-all{
-       height: 200px;
-    }
     #produk{
-        width: 450px;
+        width: 430px;
     }
     .card{
-        width: 180px !important;
+        width: 150px !important;
 
     }
     .foto-produk{
-        height: 150px !important;
+        height: 120px !important;
     }
     .card h5{
         font-size: 16px;
