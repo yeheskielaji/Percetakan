@@ -15,18 +15,6 @@ if (empty($_SESSION['username'])) {
     <title>Keranjang </title>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- <script>
-        function toggle(source) {
-            checkboxes = document.querySelectorAll('[id$="_item"]');
-            for (let i = 0, n = checkboxes.length; i < n; i++) {
-                checkboxes[i].checked = source.checked;
-            }
-        }
-
-        function centang() {
-            let total = document.querySelectorAll('[id$="_item"]:checked').length;
-            document.getElementById("totalCentang").innerHTML = total;
-        } -->
     </script>
 </head>
 
@@ -64,160 +52,135 @@ if (empty($_SESSION['username'])) {
             <div class="row pt-5">
                 <div class="col-1">
                 </div>
-                <!-- <form action="keranjang_proses.php" method="post"> -->
-                <div class="col-7">
+                <div class="col-10">
                     <h3>Keranjang</h3>
-                    <!-- <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="cekPilih" onClick="toggle(this)" onchange="centang(0)">
-                        <label class="form-check-label" for="cekPilih">
-                            Pilih Semua
-                        </label>
-                    </div> -->
 
-                    <div class="card">
-                        <div class="card-body">
+                    <!-- <div class="card">
+                        <div class="card-body"> -->
 
-                            <!-- ganti barang -->
-                            <?php
-                            include('koneksi.php');
-                            $username = $_SESSION['username'];
-                            $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
+                    <!-- ganti barang -->
+                    <?php
+                    include('koneksi.php');
+                    $username = $_SESSION['username'];
+                    $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
                             FROM keranjang a INNER JOIN product c 
                             ON a.productid=c.productid where a.username='$username';";
 
-                            $query    = mysqli_query($connect, $sql);
-                            $jumlah = 0;
-                            $totalharga = 0;
-                            while ($data = mysqli_fetch_array($query)) {
-                            ?>
+                    $query    = mysqli_query($connect, $sql);
+                    $jumlah = 0;
+                    $totalharga = 0;
+                    while ($data = mysqli_fetch_array($query)) {
+                    ?>
+                        <div class="d-flex justify-content-between align-items-center">
 
-                                <div class="card border-light">
-                                    <div class="card-body">
-                                        <!-- <input class="form-check-input" type="checkbox" id="<?= $data['keranjangid'] ?>_item" name="keranjang[]" value="<?= $data['keranjangid'] ?>" onchange="centang()"> -->
-                                        <label class="form-check-label" for="item">
-                                            <h5><?= $data['name'] ?></h5>
-                                        </label>
-                                        <div class="ps-3">
-                                            <div class="d-flex" style="height:100px;">
-                                                <img src="img/<?= $data['foto'] ?>" class="img-fluid rounded-3" alt="Shopping item" style="object-fit: contain; width:100px">
-                                                <p class="ps-4"><?= $data['penjelasan'] ?></p>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <h5>Rp<?= number_format($data['price'], 0, "", ".") ?> x <?= $data['quantity'] ?></h5>
-                                                <h5>Rp<?= number_format($data['total_harga'], 0, "", ".") ?></h5>
-                                            </div>
-                                            <div class="d-flex gap-1">
-                                                <p> Catatan :</p>
-                                                <p style="text-decoration:none;"><?= $data['catatanorder'] ?>
-                                                <p>
-                                            </div>
+                            <img src="img/<?= $data['foto'] ?>" class="img-fluid rounded-3" alt="Shopping item" style="object-fit: contain; width:75px">
+                            <div class="d-flex justify-content-start">
+                                <h6 class="pe-2"><?= $data['quantity'] ?> pcs</h6>
+                                <h6><?= number_format($data['total_harga'], 0, "", ".") ?></h6>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center pt-2">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $data['keranjangid'] ?>">edd</button>
+                                <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdroph<?= $data['keranjangid'] ?>"><img src="img/sampah.svg" width="18px"></button>
+                            </div>
+
+                            <!-- modal -->
+                            <div class="modal fade" id="staticBackdrop<?= $data['keranjangid'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Pesanan</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-
-                                        <div class="d-flex ps-3 justify-content-end">
-
-                                            <div class="d-flex justify-content-center">
-                                                <button class="btn btn-default pt-0 pb-1 px-1">
-                                                    <img src="img/sampah.svg" width="18px" class="pt-1 pb-1 mt-auto mb-auto" data-bs-toggle="modal" data-bs-target="#staticBackdroph<?= $data['keranjangid'] ?>">
-                                                </button>
-
-
-
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-primary pt-1 pb-1 mt-auto mb-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $data['keranjangid'] ?>" style="background-color: #00A445;">
-                                                    Edit Pesanan
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="staticBackdrop<?= $data['keranjangid'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Pesanan</h1>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <form method="POST" action="keranjang_edit.php">
-                                                                <div class="modal-body">
-                                                                    <input type="hidden" name="price" value="<?= $data['price'] ?>">
-                                                                    <input type="hidden" name="idedit" value=<?= $data['keranjangid'] ?>>
-                                                                    Ganti Jumlah barang
-                                                                    <input type="number" class="form-number text-center" min="1" name="quantity" style="width: 50px;" value=<?= $data['quantity'] ?>>
-                                                                    <hr>
-                                                                    Tulis Catatan
-                                                                    <input class="card card-body" style="height: 5px;" type="text" name="catatanorder" value=<?= $data['catatanorder'] ?>>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                                                    <button type="submit" class="btn btn-primary" style="background-color: #00A445;">Edit</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Modal hapus -->
-                                                <div class="modal fade" id="staticBackdroph<?= $data['keranjangid'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <form method="POST" action="keranjang_hapus.php">
-                                                                <div class="modal-body text-center">
-                                                                    <h5>Yakin ingin hapus dari keranjang?</h5>
-                                                                    <input type="hidden" name="idhapus" value=<?= $data['keranjangid'] ?>>
-                                                                </div>
-                                                                <div class="modal-footer justify-content-center">
-                                                                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                                                                    <button type="submit" class="btn btn-danger">Ya</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <form method="POST" action="keranjang_edit.php">
+                                            <div class="modal-body">
+                                                <input type="hidden" name="price" value="<?= $data['price'] ?>">
+                                                <input type="hidden" name="idedit" value=<?= $data['keranjangid'] ?>>
+                                                Ganti Jumlah barang
+                                                <input type="number" class="form-number text-center" min="1" name="quantity" style="width: 50px;" value=<?= $data['quantity'] ?>>
+                                                <hr>
+                                                <!-- Tulis Catatan
+                                                            <input class="card card-body" style="height: 5px;" type="text" name="catatanorder" value=<?= $data['catatanorder'] ?>> -->
                                             </div>
-                                        </div>
-                                        <div class="collapse" id="catatan2" style="width: 130px;">
-                                            <input class="card card-body" style="height: 5px;" type="text">
-                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-primary" style="background-color: #00A445;">Edit</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                            <?php
-                                $jumlah++;
-                                $totalharga = $totalharga + $data['total_harga'];
-                            }
-                            ?>
-                        </div>
-                        <!-- jumlah  -->
-                        <!-- Kolom kanan Berisi total -->
-                    </div>
-                </div>
-                <div class="col-4 fixed-top offset-8 my-5 py-5">
-                    <div class="card w-75">
-                        <div class="card-body">
-                            <h5 class="card-title">Ringkasan Belanja</h5>
-                            <p class="card-text">
-                            <div class="d-flex justify-content-between">
-                                <div>Total Harga (<?= $jumlah ?> barang)</div>
-                                <div><?= number_format($totalharga, 0, "", ".") ?></div>
                             </div>
-                            </p>
-                            <hr>
-                            <h5 class="card-text pb-2">
-                                <div class="d-flex justify-content-between">
-                                    <div>Total Harga</div>
-                                    <div><?= number_format($totalharga, 0, "", ".") ?></div>
+                            <!-- Modal hapus -->
+                            <div class="modal fade" id="staticBackdroph<?= $data['keranjangid'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form method="POST" action="keranjang_hapus.php">
+                                            <div class="modal-body text-center">
+                                                <h5>Yakin ingin hapus dari keranjang?</h5>
+                                                <input type="hidden" name="idhapus" value=<?= $data['keranjangid'] ?>>
+                                            </div>
+                                            <div class="modal-footer justify-content-center">
+                                                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                                <button type="submit" class="btn btn-danger">Ya</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                            </h5>
-                            <form action="keranjang_proses.php" method="post">
-                                <?php
-                                $query1    = mysqli_query($connect, $sql);
-                                while ($data1 = mysqli_fetch_array($query1)) {
-                                ?>
-                                    <input type="hidden" name="keranjang[]" value="<?= $data1['keranjangid'] ?>">
-                                    <input type="hidden" name="name[]" value="<?= $data1['name'] ?>">
-                                    <input type="hidden" name="total" value="<?= $totalharga ?>">
-                                    <input type="hidden" name="username" value="<?= $username ?>">
-                                <?php } ?>
-                                <button type="submit" class="btn btn-primary d-grid gap-2" style="background-color:#00A445; width:100%;">Beli</button>
-                            </form>
+                            </div>
+
+
                         </div>
+                        <br>
+                        <br>
+                    <?php
+                        $jumlah++;
+                        $totalharga = $totalharga + $data['total_harga'];
+                    }
+                    ?>
+                    <!-- </div> -->
+                    <!-- jumlah  -->
+                    <!-- Kolom kanan Berisi total -->
+                    <!-- </div> -->
+                    <div class="sticky-bottom bg-light">
+                        <p class="card-text">
+                            <?php
+                            $query    = mysqli_query($connect, $sql);
+                            while ($data = mysqli_fetch_array($query)) {
+                            ?>
+                        <div class="d-flex justify-content-between">
+                            <div><?= $data['name'] ?></div>
+                            <div><?= number_format($data['total_harga'], 0, "", ".") ?></div>
+                        </div>
+                    <?php } ?>
+
+                    </p>
+                    <hr>
+                    <h5 class="card-text pb-2">
+                        <div class="d-flex justify-content-between">
+                            <div>Total</div>
+                            <div><?= number_format($totalharga, 0, "", ".") ?></div>
+                        </div>
+                    </h5>
+                    <form action="keranjang_proses.php" method="post">
+                        <?php
+                        $query1    = mysqli_query($connect, $sql);
+                        while ($data1 = mysqli_fetch_array($query1)) {
+                        ?>
+                            <input type="hidden" name="keranjang[]" value="<?= $data1['keranjangid'] ?>">
+                            <input type="hidden" name="name[]" value="<?= $data1['name'] ?>">
+                            <input type="hidden" name="total" value="<?= $totalharga ?>">
+                            <input type="hidden" name="username" value="<?= $username ?>">
+                        <?php } ?>
+                        <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-warning btn-lg text-light">Checkout</button>
+                        </div>
+                    </form>
                     </div>
+
+                </div>
+                <div class="col-1">
+
                 </div>
 
             </div>
