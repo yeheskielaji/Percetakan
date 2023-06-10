@@ -10,19 +10,19 @@ if ($cek > 0) {
     if ($data['level'] == "admin") {
         $_SESSION['username'] = $username;
         $_SESSION['level'] = "admin";
-        header("location:index_admin.php");
+        header('location:index_admin.php');
     } else if ($data['level'] == "") {
         $_SESSION['username'] = $username;
         $_SESSION['level'] = "";
-        header("location:index_login.php");
+        header('location:index_login.php');
     } else if ($data['level'] == "desain") {
         $_SESSION['username'] = $username;
         $_SESSION['level'] = "desain";
-        header("location:index_desainer.php");
+        header('location:index_desainer.php');
     } else {
-        header("location:login.php?message=failed");
+        header('location:login.php?message=failed');
     }
 } else {
-    header("location:login.php?message=failed");
+    header('location:login.php?message=failed');
 }
 ?>
