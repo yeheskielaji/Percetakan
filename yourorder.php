@@ -38,44 +38,51 @@ $totalnego=0;
         </div>
     </nav>
     <section class="mx-auto" style="width:390px; padding-top: 120px">
-         <?php
-                    include('koneksi.php');
-                    $username = $_SESSION['username'];
-                    $sql   = "SELECT * FROM pesanan WHERE username = '$username'";
-                    $query  = mysqli_query($connect, $sql);
-                    while ($data = mysqli_fetch_array($query)) {
-                    ?>
+     <?php
+     include('koneksi.php');
+     $username = $_SESSION['username'];
+     $sql   = "SELECT * FROM pesanan WHERE username = '$username'";
+     $query  = mysqli_query($connect, $sql);
 
-        <div class="form-outline mb-3 text-center">
-            <input type="label" id="form3Example4" class="mb-3 form-control form-control-lg rounded-pill" placeholder=" <?= $data['keranjangid']?> <?= $data['username']?> <?= $data['total_harga']?> <?= $data['quantity']?> <?= $data['nego']?> <?= $data['productid']?>  <?= $data['status']?>"  readonly />
-        </div>
-        <?php
-        }?>
-    </section>
+     while ($data = mysqli_fetch_array($query)) {
+        ?>
 
-    <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
-        <div class="container text-center ">
-            <div class="row gap-5 mx-auto" style="font-size:18px;">
-                <div class="col">
-                    <a class="nav-link active" aria-current="page" href="index_login.php"><i class="bi bi-house "></i></a>
-                </div>
-                <div class="col">
-                    <a class="nav-link" href=""><i class="bi bi-bell"></i></a>
-                </div>
-                <div class="col">
-                    <a class="nav-link " href=""><i class="bi bi-plus"></i></a>
-                </div>
-                <div class="col">
-                    <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
-                </div>
-                <div class="col">
-                    <a class="nav-link" href=""><i class="bi bi-gear"></i></a>
-                </div>
+
+        <div class="form-outline mb-3 text-left">
+            <table class="table">
+             <tbody>
+                <tr>
+                  <td> Keranjang Id = <?=$data['keranjangid']?> <?php echo "<br>" ?> Username = <?= $data['username']?> <?php echo "<br>" ?>  Total Harga = <?= $data['total_harga']?> <?php echo "<br>" ?> Quantity =  <?= $data['quantity']?> <?php echo "<br>" ?> Nego = <?= $data['nego']?> <?php echo "<br>" ?>  Produk Id = <?= $data['productid']?> <?php echo "<br>" ?> Status = <?= $data['status']?></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <?php
+}?>
+</section>
+<nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
+    <div class="container text-center ">
+        <div class="row gap-5 mx-auto" style="font-size:18px;">
+            <div class="col">
+                <a class="nav-link active" aria-current="page" href="index_login.php"><i class="bi bi-house "></i></a>
+            </div>
+            <div class="col">
+                <a class="nav-link" href=""><i class="bi bi-bell"></i></a>
+            </div>
+            <div class="col">
+                <a class="nav-link " href=""><i class="bi bi-plus"></i></a>
+            </div>
+            <div class="col">
+                <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
+            </div>
+            <div class="col">
+                <a class="nav-link" href=""><i class="bi bi-gear"></i></a>
             </div>
         </div>
-    </nav>
-    <!-- <script src="js/scripts.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </div>
+</nav>
+<!-- <script src="js/scripts.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>
