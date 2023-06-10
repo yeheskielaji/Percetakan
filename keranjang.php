@@ -22,11 +22,17 @@ if (empty($_SESSION['username'])) {
 <body>
     <nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php" style="font-weight:bolder;">
-                <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
-            <a class="login-min d-flex" href="login.php" style="text-decoration: none;">
-                <button type="button" class="btn btn-outline-warning">Login</button>
-            </a>
+        <div class="row gap-5 mx-auto color-primary" style="font-size:18px;">
+                <div class="col">
+                    <a class="nav-link active" href="index_login.php" style="font-size: 28px;"><i class="bi bi-arrow-left-circle"></i></a>
+                </div>
+                <div class="col" >
+                    <h1 class="fw-semibold">Keranjang</h1>
+                </div>
+                <div class="col">
+                    <a class="nav-link " href="" style="font-size: 28px;"><i class="bi bi-search"></i></a>
+                </div>
+            </div>
         </div>
         </div>
     </nav>
@@ -36,7 +42,6 @@ if (empty($_SESSION['username'])) {
                 <div class="col-1">
                 </div>
                 <div class="col-10">
-                    <h3>Keranjang</h3>
 
                     <!-- <div class="card">
                         <div class="card-body"> -->

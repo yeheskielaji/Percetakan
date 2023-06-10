@@ -1,3 +1,11 @@
 {
-    "php.validate.executablePath": ""
+  "php.validate.executablePath": "",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "muuvmuuv.vscode-just-php-cs-fixer"
+  }
 }

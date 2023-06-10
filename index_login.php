@@ -24,8 +24,8 @@ if (empty($_SESSION['username'])) {
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php" style="font-weight:bolder;">
                 <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
-            <a class="login-min d-flex" href="login.php" style="text-decoration: none;">
-                <button type="button" class="btn btn-outline-warning">gambar</button>
+            <a class="login-min d-flex color-primary align-self-center" href="user.php" style="text-decoration: none; font-size:28px;">
+                <i class="bi bi-person-circle "></i>
             </a>
         </div>
         </div>
