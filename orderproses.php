@@ -15,7 +15,7 @@ include 'koneksi.php';
 	$query	= mysqli_query($connect, $sql) or die(mysqli_error($connect)); 
 
 	if($query) {
-		header("location:index_admin.php");
+		header("location:keranjang.php");
 	
 	} else {
 		echo "Input Data Gagal.";
