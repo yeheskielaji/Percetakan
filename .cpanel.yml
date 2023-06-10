@@ -2,4 +2,4 @@
 deployment:
       tasks:
         - export DEPLOYPATH=/public_html/
-        - /bin cp * $DEPLOYPATH    
+        - /bin/ cp * $DEPLOYPATH    
