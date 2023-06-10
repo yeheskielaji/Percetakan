@@ -3,3 +3,4 @@ deployment:
       tasks:
         - export DEPLOYPATH=/home/percet16/public_html
         - /bin/cp -r ./*.php $DEPLOYPATH/
+        - /bin/cp -r ./* $DEPLOYPATH/
