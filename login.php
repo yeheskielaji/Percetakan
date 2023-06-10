@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <section class="vh-100">
+    <section class="mx-auto" style="width:390px;">
             <div class="row m-2 mt-5 justify-content-center">
                     <div class="mx-auto pb-5 mb-5 text-center">
                         <h1 style="font-weight: bolder;">MASUK</h1>
