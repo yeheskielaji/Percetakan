@@ -135,7 +135,7 @@ while ($data = mysqli_fetch_array($queryd)) {
                                                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Revisi Desain<br>#<?= $data['keranjangid'] ?></h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <div class="modal-body">
+                                                    <div class="modal-body"> 
                                                         <form action="index_admin_action.php" method="post" enctype="multipart/form-data">
                                                             <label for="fileInput" class="card mx-auto w-100 bg-secondary rounded-pills align-items-center">
                                                                 <img src="asset/tambah.png" alt="Pilih Gambar" class="card-img-top pt-5 mt-5 pb-5 mb-5" style="width: 40%;">

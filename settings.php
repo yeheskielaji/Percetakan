@@ -48,7 +48,7 @@ $totalnego=0;
                 <button type="submit" class="btn col-12 btn-lg rounded-pill" style="font-weight: bolder; background-color:#808080; color:white;">Your Order</button>
             </div>
             </form>
-            <form method="POST" action="index.php">
+            <form method="POST" action="logout.php">
             <div class="text-center text-lg-start mt-2 mr">
                 <button type="submit" class="btn col-12 btn-lg rounded-pill" style="font-weight: bolder; background-color:#808080; color:white;">Sign Out</button>
             </div>

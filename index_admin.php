@@ -14,7 +14,7 @@ $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.file, a.
                             ON a.productid=c.productid where a.status=1;";
 $sqll = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.file, a.nego, c.name, c.foto, c.price, a.status 
                             FROM pesanan a INNER JOIN product c 
-                            ON a.productid=c.productid where a.status!=1 AND a.status!=10;";
+                            ON a.productid=c.productid where a.status!=1 AND a.status!=10 AND a.status!=0;";
 $query    = mysqli_query($connect, $sql);
 
 ?>
