@@ -54,7 +54,7 @@ $username = $_SESSION['username'];
 				<div class="col-10 text-center">
 					<form action="orderproses.php" method="post" enctype="multipart/form-data">
 						<label for="fileInput" class="card mx-auto w-100 bg-secondary rounded-pills align-items-center">
-							<img src="img/tambah.png" alt="Pilih Gambar" class="card-img-top pt-5 mt-5 pb-5 mb-5" style="width: 40%;">
+							<img src="asset/tambah.png" alt="Pilih Gambar" class="card-img-top pt-5 mt-5 pb-5 mb-5" style="width: 40%;">
 							<input id="fileInput" type="file" class="visually-hidden" name="file">
 							<p class="text-warning pb-5 mb-5">Add file .pdf .cdr .ai</p>
 						</label>
