@@ -41,16 +41,16 @@
           while ($data = mysqli_fetch_array($query)) {
           ?>
             <div class="col">
-            <a href=index_admin_edit.php style="text-decoration: none;">
-              <div class="card mx-auto" style="width: 18rem;">
-                <div class="foto-produk m-2 p-1" style="height:110px;">
-                  <img src="img/<?php echo $data['foto']; ?>" class="card-img-top">
+              <a href=index_admin_edit.php style="text-decoration: none;">
+                <div class="card mx-auto" style="width: 18rem;">
+                  <div class="foto-produk m-2 p-1" style="height:110px;">
+                    <img src="img/<?php echo $data['foto']; ?>" class="card-img-top">
+                  </div>
+                  <div class="card-body" style="color: black;">
+                    <h5 class="card-title"><?= $data['name']; ?></h5>
+                    <h6 class="card-title">Rp. <?= number_format($data['price'], 0, "", ".") ?></h6>
+                  </div>
                 </div>
-                <div class="card-body" style="color: black;">
-                  <h5 class="card-title"><?= $data['name']; ?></h5>
-                  <h6 class="card-title" >Rp. <?= number_format($data['price'], 0, "", ".") ?></h6>
-                </div>
-              </div>
               </a>
               <br>
             </div>
@@ -61,26 +61,27 @@
   </div>
 
 
-<nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
-  <div class="container text-center ">
-    <div class="row gap-5 mx-auto" style="font-size:18px;">
-      <div class="col">
-      <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
-      </div>
-      <div class="col">
-      <a class="nav-link" href=""><i class="bi bi-bell"></i></a>
-      </div>
-      <div class="col">
-      <a class="nav-link " href=""><i class="bi bi-plus"></i></a>
-      </div>
-      <div class="col">
-      <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
-      </div>
-      <div class="col">
-      <a class="nav-link" href=""><i class="bi bi-gear"></i></a>
+  <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
+    <div class="container text-center ">
+      <div class="row gap-5 mx-auto" style="font-size:18px;">
+        <div class="col">
+          <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
+        </div>
+        <div class="col">
+          <a class="nav-link" href=""><i class="bi bi-bell"></i></a>
+        </div>
+        <div class="col">
+          <a class="nav-link " href=""><i class="bi bi-plus"></i></a>
+        </div>
+        <div class="col">
+          <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
+        </div>
+        <div class="col">
+          <a class="nav-link" href=""><i class="bi bi-gear"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </body>
+
 </html>

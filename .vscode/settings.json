@@ -6,6 +6,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[php]": {
-    "editor.defaultFormatter": "muuvmuuv.vscode-just-php-cs-fixer"
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   }
 }
