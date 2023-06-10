@@ -17,7 +17,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php" style="font-weight:bolder;">
         <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
-      <a class="login-min d-flex" href="login.php" style="text-decoration: none;">
+      <a class="d-flex" href="login.php" style="text-decoration: none;">
         <button type="button" class="btn btn-outline-warning">Login</button>
       </a>
     </div>

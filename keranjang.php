@@ -195,7 +195,7 @@ $totalnego=0;
                     <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
                 </div>
                 <div class="col">
-                    <a class="nav-link" href="riwayat.php"><i class="bi bi-gear"></i></a>
+                    <a class="nav-link" href=""><i class="bi bi-gear"></i></a>
                 </div>
             </div>
         </div>
