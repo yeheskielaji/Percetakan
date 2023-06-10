@@ -41,7 +41,7 @@ $query    = mysqli_query($connect, $sql);
                     <a href="">
                         <h3>Dashboard</h3>
                     </a>
-                    <a href="">
+                    <a href="index_admin_invoice.php">
                         <h3>Invoice</h3>
                     </a>
                     <a href="">
