@@ -65,7 +65,6 @@ if (empty($_SESSION['username'])) {
         </div>
     </div>
 
-
     <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
         <div class="container text-center ">
             <div class="row gap-5 mx-auto" style="font-size:18px;">
@@ -88,33 +87,4 @@ if (empty($_SESSION['username'])) {
         </div>
     </nav>
 </body>
-
-
 </html>
-
-<!-- <div class="modal fade" id="staticBackdrop<?= $data['productid'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <form method="POST" action="index_login_proses.php">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Masukkan Pesanan</h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <input type="hidden" name="username" value="<?= $username; ?>">
-                                                            <input type="hidden" value="<?= $data['productid']; ?>" name="productid">
-                                                            <input type="hidden" value="<?= $data['price']; ?>" name="price">
-                                                            Jumlah barang
-                                                            <input type="number" name="quantity" class="form-number text-center" min="1" id="customRange3" style="width: 50px; margin-right: -4px;" value="1">
-                                                            <hr>
-                                                            Tulis Catatan
-                                                            <input class="card card-body" style="height: 5px; width: 100%" type="text" name="catatanorder">
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                                            <button type="submit" class="btn btn-primary " style="background-color: #00A445;">Submit</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div> -->

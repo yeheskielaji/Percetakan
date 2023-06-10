@@ -18,6 +18,8 @@ $username = $_SESSION['username'];
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Nego Harga </title>
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	</script>
 </head>
@@ -25,13 +27,6 @@ $username = $_SESSION['username'];
 <?php
 include('koneksi.php');
 $username = $_SESSION['username'];
-// $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
-// 		FROM keranjang a INNER JOIN product c 
-// 		ON a.productid=c.productid where a.username='$username';";
-
-// $query    = mysqli_query($connect, $sql);
-// $jumlah = 0;
-// $totalharga = 0;
 ?>
 
 <body style="font-family: 'Montserrat', sans-serif;">
@@ -73,7 +68,7 @@ $username = $_SESSION['username'];
 		<div class="container text-center ">
 			<div class="row gap-5 mx-auto" style="font-size:18px;">
 				<div class="col">
-					<a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
+					<a class="nav-link active" aria-current="page" href="index_login.php"><i class="bi bi-house "></i></a>
 				</div>
 				<div class="col">
 					<a class="nav-link" href=""><i class="bi bi-bell"></i></a>

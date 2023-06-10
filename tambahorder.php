@@ -86,7 +86,7 @@ $totalharga = 0;
 		<div class="container text-center ">
 			<div class="row gap-5 mx-auto" style="font-size:18px;">
 				<div class="col">
-					<a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
+					<a class="nav-link active" aria-current="page" href="index_login.php"><i class="bi bi-house "></i></a>
 				</div>
 				<div class="col">
 					<a class="nav-link" href=""><i class="bi bi-bell"></i></a>
