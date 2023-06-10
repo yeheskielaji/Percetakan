@@ -19,20 +19,48 @@ if (empty($_SESSION['username'])) {
 </head>
 
 <body>
+    <div class="row align-items-start">
     <div class="col-2">
         <div>
-            <img src="asset/logo.png" alt="">
+            <img src="asset/logo cetak.png" alt="">
+            <a href=""><h3>Dashboard</h3></a>
+            <a href=""><h3>Invoice</h3></a>
+            <a href=""><h3>pending</h3></a>
         </div>
-        <div class="text-center text-md-start justify-content-between">
-            <div class="mb-3 mb-md-0">
-                Copyright © 2022. All rights reserved.
+        <div class="fixed-bottom text-center text-md-start justify-content-between" style="padding-bottom: 30px;">
+            <div class="mb-3 mb-md-0" style="color:grey;">
+                <a href="">logout<i class="bi bi-box-arrow-right"></i></a>
             </div>
         </div>
     </div>
-    <div class="col-11">
-
+    <div class="col-10">
+        <table class="table">
+            <thead class="text-center">
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Produk</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Total Harga</th>
+                <th scope="col">Nego</th>
+                <th colspan="2">Status</th>
+                </tr>
+            </thead>
+            <tbod class="text-center">
+                <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
+    </div>
    
 </body>
 
