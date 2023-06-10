@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 10:03 AM
+-- Generation Time: Jun 10, 2023 at 11:10 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,7 +37,8 @@ CREATE TABLE `desainer` (
 --
 
 INSERT INTO `desainer` (`desainerid`, `username`) VALUES
-(1, 'desain');
+(1, 'desain'),
+(-1, 'dummyd');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`keranjangid`, `username`, `total_harga`, `productid`, `quantity`, `nego`, `file`, `desainerid`, `status`) VALUES
-(1, 'andra', 8000000, 1, 2, 0, 'bang', 0, '');
+(1, 'andra', 8000000, 1, 2, 0, 'bang', -1, '');
 
 -- --------------------------------------------------------
 
@@ -125,6 +126,7 @@ INSERT INTO `user` (`username`, `password`, `level`) VALUES
 ('aji', 'aji', 'admin'),
 ('andra', '123', ''),
 ('desain', 'desain', 'desain'),
+('dummyd', 'dummyd', 'desain'),
 ('user', 'user', '');
 
 --

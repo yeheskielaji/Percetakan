@@ -15,36 +15,19 @@ if (empty($_SESSION['username'])) {
     <title>Keranjang </title>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
-<body style="font-family: 'Montserrat', sans-serif;">
-    <nav class="navbar fixed-top navbar-expand-lg background-primary" style="height:60px;">
+<body>
+    <nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index_login.php" style="font-weight:bolder; color:#00A445;">
-                <img src="asset/logo putih.png" alt="logo" style="height: 25px; margin-top: -7px; padding-left: 4px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px;">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" style="color: #00A445;">
-                        <a class="nav-link active text-white" aria-current="page" href="index_login.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white " href="index_login.php#produk">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white " href="keranjang.php">Keranjang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white " href="riwayat.php">Riwayat</a>
-                    </li>
-                </ul>
-                <a class="d-flex" href="logout.php" style="text-decoration: none;">
-                    <button type="button" class="btn btn-outline-light">Logout</button>
-                </a>
-            </div>
+            <a class="navbar-brand" href="index.php" style="font-weight:bolder;">
+                <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
+            <a class="login-min d-flex" href="login.php" style="text-decoration: none;">
+                <button type="button" class="btn btn-outline-warning">Login</button>
+            </a>
+        </div>
         </div>
     </nav>
     <section class="vh-100">
@@ -145,52 +128,71 @@ if (empty($_SESSION['username'])) {
 
             </div>
         </div>
-
-        <div class="container fixed-bottom bg-white pb-5">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-10">
-                                <p class="card-text">
-                                    <?php
-                                    $query    = mysqli_query($connect, $sql);
-                                    while ($data = mysqli_fetch_array($query)) {
-                                    ?>
-                                <div class="d-flex justify-content-between">
-                                    <div><?= $data['name'] ?></div>
-                                    <div><?= number_format($data['total_harga'], 0, "", ".") ?></div>
-                                </div>
-                            <?php } ?>
-                            <div class="d-flex justify-content-between">
-                                <div>Nego</div>
-                                <div><?= number_format(0, 0, "", ".") ?></div>
-                            </div>
-                            </p>
-                            <hr>
-                            <h5 class="card-text pb-2">
-                                <div class="d-flex justify-content-between">
-                                    <div>Total</div>
-                                    <div><?= number_format($totalharga, 0, "", ".") ?></div>
-                                </div>
-                            </h5>
-                            <form action="keranjang_proses.php" method="post">
-                                <?php
-                                $query1    = mysqli_query($connect, $sql);
-                                while ($data1 = mysqli_fetch_array($query1)) {
-                                ?>
-                                    <input type="hidden" name="keranjang[]" value="<?= $data1['keranjangid'] ?>">
-                                    <input type="hidden" name="name[]" value="<?= $data1['name'] ?>">
-                                    <input type="hidden" name="total" value="<?= $totalharga ?>">
-                                    <input type="hidden" name="username" value="<?= $username ?>">
-                                <?php } ?>
-                                <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-warning btn-lg text-light rounded-pill">Checkout</button>
-                                </div>
-                            </form>
-                            </div>
-                        </div>
-
-
-                    </div>
     </section>
+    <div class="container fixed-bottom bg-white pb-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-10">
+                    <p class="card-text">
+                        <?php
+                        $query    = mysqli_query($connect, $sql);
+                        while ($data = mysqli_fetch_array($query)) {
+                        ?>
+                    <div class="d-flex justify-content-between">
+                        <div><?= $data['name'] ?></div>
+                        <div><?= number_format($data['total_harga'], 0, "", ".") ?></div>
+                    </div>
+                <?php } ?>
+                <div class="d-flex justify-content-between">
+                    <div>Nego</div>
+                    <div><?= number_format(0, 0, "", ".") ?></div>
+                </div>
+                </p>
+                <hr>
+                <h5 class="card-text pb-2">
+                    <div class="d-flex justify-content-between">
+                        <div>Total</div>
+                        <div><?= number_format($totalharga, 0, "", ".") ?></div>
+                    </div>
+                </h5>
+                <form action="keranjang_proses.php" method="post">
+                    <?php
+                    $query1    = mysqli_query($connect, $sql);
+                    while ($data1 = mysqli_fetch_array($query1)) {
+                    ?>
+                        <input type="hidden" name="keranjang[]" value="<?= $data1['keranjangid'] ?>">
+                        <input type="hidden" name="name[]" value="<?= $data1['name'] ?>">
+                        <input type="hidden" name="total" value="<?= $totalharga ?>">
+                        <input type="hidden" name="username" value="<?= $username ?>">
+                    <?php } ?>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-warning btn-lg text-light rounded-pill">Checkout</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
+  <div class="container text-center ">
+    <div class="row gap-5 mx-auto" style="font-size:18px;">
+      <div class="col">
+      <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link" href=""><i class="bi bi-bell"></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link " href=""><i class="bi bi-plus"></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
+      </div>
+      <div class="col">
+      <a class="nav-link" href="riwayat.php"><i class="bi bi-gear"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
     <!-- <script src="js/scripts.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
