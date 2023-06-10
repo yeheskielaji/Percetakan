@@ -45,8 +45,8 @@ if (empty($_SESSION['username'])) {
                     <?php
                     include('koneksi.php');
                     $username = $_SESSION['username'];
-                    $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
-                            FROM keranjang a INNER JOIN product c 
+                    $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.file, c.name, c.foto, c.price 
+                            FROM pesanan a INNER JOIN product c 
                             ON a.productid=c.productid where a.username='$username';";
 
                     $query    = mysqli_query($connect, $sql);
@@ -129,7 +129,7 @@ if (empty($_SESSION['username'])) {
             </div>
         </div>
     </section>
-    <div class="container fixed-bottom bg-white pb-5">
+    <div class="container fixed-bottom bg-white pb-5 mb-5 mt-3">
             <div class="row d-flex justify-content-center">
                 <div class="col-10">
                     <p class="card-text">

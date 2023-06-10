@@ -14,6 +14,8 @@ if (empty($_SESSION['username'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Nego Harga </title>
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	</script>
 </head>
@@ -21,8 +23,8 @@ if (empty($_SESSION['username'])) {
 <?php
 include('koneksi.php');
 $username = $_SESSION['username'];
-$sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
-		FROM keranjang a INNER JOIN product c 
+$sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, c.name, c.foto, c.price 
+		FROM pesanan a INNER JOIN product c 
 		ON a.productid=c.productid where a.username='$username';";
 
 $query    = mysqli_query($connect, $sql);
@@ -53,7 +55,7 @@ $totalharga = 0;
 		</div>
 
 		<!-- bawah -->
-		<div class="container fixed-bottom bg-white pb-5">
+		<div class="container fixed-bottom bg-white pb-5 mb-5 mt-3">
 			<div class="row d-flex justify-content-center">
 				<div class="col-10 text-center">
 					<h5 class="mb-4">Nego</h5>

@@ -4,6 +4,10 @@ if (empty($_SESSION['username'])) {
 	header("location:login.php?message=belum_login");
 }
 
+$quantity = $_POST['quantity'];
+$total_harga = $_POST['total_harga'];
+$productid = $_POST['productid'];
+$username = $_SESSION['username'];
 ?>
 
 <!doctype html>
@@ -21,13 +25,13 @@ if (empty($_SESSION['username'])) {
 <?php
 include('koneksi.php');
 $username = $_SESSION['username'];
-$sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
-		FROM keranjang a INNER JOIN product c 
-		ON a.productid=c.productid where a.username='$username';";
+// $sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.catatanorder, c.name, c.penjelasan, c.foto, c.price 
+// 		FROM keranjang a INNER JOIN product c 
+// 		ON a.productid=c.productid where a.username='$username';";
 
-$query    = mysqli_query($connect, $sql);
-$jumlah = 0;
-$totalharga = 0;
+// $query    = mysqli_query($connect, $sql);
+// $jumlah = 0;
+// $totalharga = 0;
 ?>
 
 <body style="font-family: 'Montserrat', sans-serif;">
@@ -36,37 +40,56 @@ $totalharga = 0;
 		<div class="container pt-5">
 			<div class="row d-flex justify-content-center">
 				<div class="col-10 text-center">
-					<form action="" method="post">
+					<form action="orderproses.php" method="post">
 						<label for="fileInput" class="card mx-auto w-100 bg-secondary rounded-pills align-items-center">
 							<img src="img/tambah.png" alt="Pilih Gambar" class="card-img-top pt-5 mt-5 pb-5 mb-5" style="width: 40%;">
-							<input id="fileInput" type="file" class="visually-hidden">
+							<input id="fileInput" type="file" class="visually-hidden" name="file">
 							<p class="text-warning pb-5 mb-5">Add file .pdf .cdr .ai</p>
 						</label>
 				</div>
 			</div>
 		</div>
 
-		<!-- bawah -->
-		<div class="container fixed-bottom bg-white pb-5">
+		
+	</section>
+	<!-- bawah -->
+	<div class="container fixed-bottom bg-white pb-5 mb-5">
 			<div class="row d-flex justify-content-center">
-				<div class="col-10 text-center">
-					<!-- <?php
-							$query1    = mysqli_query($connect, $sql);
-							while ($data1 = mysqli_fetch_array($query1)) {
-							?>
-							<input type="hidden" name="keranjang[]" value="<?= $data1['keranjangid'] ?>">
-							<input type="hidden" name="name[]" value="<?= $data1['name'] ?>">
-							<input type="hidden" name="total" value="<?= $totalharga ?>">
-							<input type="hidden" name="username" value="<?= $username ?>">
-						<?php } ?> -->
+				<div class="col-10 text-center mt-3">
 					<div class="d-grid gap-2 pt-0">
+						<input type="hidden" name="quantity" value="<?=$quantity?>">
+						<input type="hidden" name="total_harga" value="<?=$total_harga?>">
+						<input type="hidden" name="username" value="<?=$username?>">
+						<input type="hidden" name="productid" value="<?=$productid?>">
+						
 						<button type="submit" class="btn btn-warning btn-lg text-light rounded-pill">Kirim</button>
 					</div>
 					</form>
 				</div>
 			</div>
 		</div>
-	</section>
+
+		<nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
+		<div class="container text-center ">
+			<div class="row gap-5 mx-auto" style="font-size:18px;">
+				<div class="col">
+					<a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
+				</div>
+				<div class="col">
+					<a class="nav-link" href=""><i class="bi bi-bell"></i></a>
+				</div>
+				<div class="col">
+					<a class="nav-link " href=""><i class="bi bi-plus"></i></a>
+				</div>
+				<div class="col">
+					<a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
+				</div>
+				<div class="col">
+					<a class="nav-link" href="riwayat.php"><i class="bi bi-gear"></i></a>
+				</div>
+			</div>
+		</div>
+	</nav>
 	<!-- <script src="js/scripts.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
