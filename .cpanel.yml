@@ -1,5 +1,5 @@
 ---
 deployment:
       tasks:
-        - export DEPLOYPATH=/home/percet16/public_html
+        - export DEPLOYPATH=/public_html
         - /bin cp * $DEPLOYPATH    
