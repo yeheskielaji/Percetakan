@@ -12,4 +12,4 @@ $hapus    = "UPDATE pesanan SET status='1' WHERE keranjangid='$idkeranjang'";
 $query    = mysqli_query($connect, $hapus) or die(mysqli_error($connect));
 
 }
-header("Location:ordermasuk.php");
+header("location:ordermasuk.php");

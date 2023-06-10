@@ -8,16 +8,16 @@
 	$level	  = "";
 
 	if($password !== $telp){
-		header("Location:register.php?message=beda");
+		header("location:register.php?message=beda");
 	} else {
 		$sql = "INSERT INTO user VALUES('$username','$password','$level')";
 
 		$query	= mysqli_query($connect, $sql) or die(mysqli_error($connect));
 
 		if($query) {
-			header("Location:login.php?message=daftar_berhasil");
+			header("location:login.php?message=daftar_berhasil");
 		} else {
-			header("Location:login.php?message=failed");
+			header("location:login.php?message=failed");
 		}
 	}
 

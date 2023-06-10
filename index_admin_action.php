@@ -29,14 +29,14 @@ $query	= mysqli_query($connect, $sql);
 
 if ($jenis == 3 || $jenis == 4) {
 	if ($query) {
-		header("Location:index_desainer.php");
+		header("location:index_desainer.php");
 	} else {
 		echo "Gagal";
 	}
 } else {
 
 	if ($query) {
-		header("Location:index_admin.php");
+		header("location:index_admin.php");
 	} else {
 		echo "Gagal";
 	}
