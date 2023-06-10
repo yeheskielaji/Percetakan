@@ -13,7 +13,7 @@ if (empty($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <title>Percetakaan</title>
+    <title>PercetakaKU</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -24,7 +24,7 @@ if (empty($_SESSION['username'])) {
         <div class="container-fluid">
             <a class="navbar-brand" href="index_login.php" style="font-weight:bolder;">
                 <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
-            <a class="login-min d-flex color-primary align-self-center" href="user.php" style="text-decoration: none; font-size:28px;">
+            <a class="login-min d-flex color-primary align-self-center" href="youraccount.php" style="text-decoration: none; font-size:28px;">
                 <i class="bi bi-person-circle "></i>
             </a>
         </div>
@@ -35,7 +35,7 @@ if (empty($_SESSION['username'])) {
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
     </div>
     <div id="produk">
-        <div class="p-3 m-0 border-0">
+        <div class="p-3 m-0 border-0 mb-5">
             <div class="container text-center">
                 <div class="row">
                     <?php
@@ -81,7 +81,7 @@ if (empty($_SESSION['username'])) {
                     <a class="nav-link " href="keranjang.php"><i class="bi bi-cart"></i></a>
                 </div>
                 <div class="col">
-                    <a class="nav-link" href=""><i class="bi bi-gear"></i></a>
+                    <a class="nav-link" href="settings.php"><i class="bi bi-gear"></i></a>
                 </div>
             </div>
         </div>

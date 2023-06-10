@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 11:10 AM
+-- Generation Time: Jun 10, 2023 at 06:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -83,26 +83,14 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`productid`, `name`, `price`, `foto`) VALUES
-(1, 'Auto Clave', 4000000, 'autoclave.jpg'),
-(2, 'Automated Defibrillator', 2000000, 'automateddefibrillator.jpg'),
-(11, 'Face Mask', 50000, 'facemask.png'),
-(14, 'Blood Test Kit', 50000, 'blood.jpg'),
-(15, 'Bed Screen', 1750000, 'BedScreen.jpg'),
-(16, 'Co Analyzer', 500000, 'CoAnalyzer.jpg'),
-(17, 'Hot Water Bag', 25000, 'hotwaterbag.jpg'),
-(18, 'Infusion Pump', 27500000, 'infusionpump.png'),
-(19, 'Inhaler', 20000, 'inhaler.jpg'),
-(20, 'Kursi Roda', 1500000, 'kursiroda.jpg'),
-(21, 'Masker Medis', 20000, 'maskermedis.jpg'),
-(22, 'Medicine Trolley', 12000000, 'medicinetrolley.jpg'),
-(23, 'Meja Operasi', 150000000, 'mejaoperasi.jpg'),
-(24, 'P3K', 150000, 'p3k.jpg'),
-(25, 'Pulse Oxymeter', 0, 'pulseoxymeter.jpg'),
-(26, 'Scoop Stertcher', 4000000, 'ScoopStertcher.jpg'),
-(27, 'Stetoskop', 8000000, 'stetoskop.jpg'),
-(28, 'Termometer', 25000, 'termometer.jpg'),
-(29, 'X-Ray', 200000000, 'xray.png'),
-(30, 'Alcohol Swabs', 30000, 'AlcoholSwabs.jpeg');
+(1, 'Stiker A3', 10000, 'stikerA3.png'),
+(2, 'Kalender', 25000, 'kalender.png'),
+(4, 'Nota', 190000, 'nota.png'),
+(6, 'Poster A3', 5000, 'posterA3.png'),
+(8, 'Buku Yasin', 30000, 'bukuyasin.png'),
+(9, 'Kalender Duduk', 30000, 'Kalenderduduk.png'),
+(10, 'Kartu Nama', 50000, 'kartunama.png'),
+(13, 'X-Banner', 200000, 'xbanner.png');
 
 -- --------------------------------------------------------
 

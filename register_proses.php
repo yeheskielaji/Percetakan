@@ -5,14 +5,13 @@
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$telp	  = $_POST['konfirmasi'];
-	$alamat	  = $_POST['alamat'];
 	$level	  = "";
 
 	// if($password =! $konfirmasi){
 	// 	header("location:login.php?message=password tidak sama");
 	// }
 
-	$sql = "INSERT INTO user VALUES('$username','$password', '$telp','$alamat','$level')";
+	$sql = "INSERT INTO user VALUES('$username','$password','$level')";
 
 	$query	= mysqli_query($connect, $sql) or die(mysqli_error($connect));
 

@@ -70,8 +70,8 @@ $totalnego=0;
                         </div>
                         <div class="row justify-content-center pt-2">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $data['keranjangid'] ?>"><img src="asset/edit.png" width="18px"></button>
-                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdroph<?= $data['keranjangid'] ?>"><img src="asset/hapus.png" width="18px"></button>
+                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $data['keranjangid'] ?>"><img src="img/edit.png" width="18px"></button>
+                                <button type="button" class="btn btn-secondary btn-lg " data-bs-toggle="modal" data-bs-target="#staticBackdroph<?= $data['keranjangid'] ?>"><img src="img/hapus.png" width="18px"></button>
                             </div>
 
                             <!-- modal -->
@@ -135,6 +135,7 @@ $totalnego=0;
                 </div>
                 <div class="col-1">
                 </div>
+
             </div>
         </div>
     </section>
@@ -160,7 +161,7 @@ $totalnego=0;
             <h5 class="card-text pb-2">
                 <div class="d-flex justify-content-between">
                     <div>Total</div>
-                    <div><?= number_format($totalharga-$totalnego, 0, "", ".") ?></div>
+                    <div><?= number_format($totalharga, 0, "", ".") ?></div>
                 </div>
             </h5>
             <form action="keranjang_checkout.php" method="post">
