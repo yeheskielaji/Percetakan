@@ -10,15 +10,10 @@
 </head>
 
 <body>
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="asset/loginpage.jpg" class="rounded img-fluid" alt="medical device">
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <div class="mx-auto d-block pb-5" style="width:60%;">
-                        <img src="asset/logo.png" class="rounded img-fluid" alt="medical device">
+    <section class="mx-auto" style="width:390px;">
+            <div class="row m-2 mt-5 justify-content-center">
+                    <div class="mx-auto pb-5 mb-5 text-center">
+                        <h1 style="font-weight: bolder;">MASUK</h1>
                     </div>
                     <div class="text-center pb-1 fw-bold" style="color:red;">
                         <?php
@@ -35,31 +30,22 @@
                     </div>
                     <form method="POST" action="login_proses.php">
                         <!-- Email input -->
-                        <div class="form-outline mb-2 mt-2">
-                            <input type="text" id="form3Example3" class="form-control form-control-lg" name="username" placeholder="Enter Username" />
-                            <label class="form-label" for="form3Example3">Username</label>
+                        <div class="form-outline mb-4 mt-2">
+                            <input type="text" id="form3Example3" class="form-control form-control-lg rounded-pill" name="username" placeholder="Email" />
                         </div>
 
                         <!-- Password input -->
-                        <div class="form-outline mb-3">
-                            <input type="password" id="form3Example4" class="form-control form-control-lg" name="password" placeholder="Enter password" />
-                            <label class="form-label" for="form3Example4">Password</label>
+                        <div class="form-outline mb-5 text-center">
+                            <input type="password" id="form3Example4" class="mb-3 form-control form-control-lg rounded-pill" name="password" placeholder="Password" />
+                            <label for="" style="color:gray;">lupa password?</label>
                         </div>
 
-                        <div class="text-center text-lg-start pt-2">
-                            <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register.php" style="color:blue;">Register</a></p>
+                        <div class="text-center text-lg-start mt-5" style="padding-top:100px;">
+                            <button type="submit" class="btn col-12 btn-lg rounded-pill" style="font-weight: bolder; background-color:#F1C40F; color:white;">Masuk</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0 color-primary"><a href="register.php" style="color:#F1C40F; text-decoration:none;">Belum punya akun?</a></p>
                         </div>
                     </form>
-
-                </div>
             </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 background-primary">
-            <div class="text-white mb-3 mb-md-0">
-                Copyright © 2022. All rights reserved.
-            </div>
-        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

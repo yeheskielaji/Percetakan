@@ -4,8 +4,10 @@ if (empty($_SESSION['username'])) {
 	header("location:login.php?message=belum_login");
 }
 
-$keranjangid = $_POST['keranjangid'];
-
+$quantity = $_POST['quantity'];
+$total_harga = $_POST['total_harga'];
+$productid = $_POST['productid'];
+$username = $_SESSION['username'];
 ?>
 
 <!doctype html>
@@ -25,11 +27,6 @@ $keranjangid = $_POST['keranjangid'];
 <?php
 include('koneksi.php');
 $username = $_SESSION['username'];
-$sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.nego, c.name, c.foto, c.price 
-		FROM pesanan a INNER JOIN product c 
-		ON a.productid=c.productid AND a.keranjangid='$keranjangid' where a.username='$username';";
-
-$query    = mysqli_query($connect, $sql);
 ?>
 
 <body style="font-family: 'Montserrat', sans-serif;">
@@ -38,10 +35,10 @@ $query    = mysqli_query($connect, $sql);
         <div class="container-fluid">
         <div class="row gap-5 mx-auto color-primary" style="font-size:18px;">
                 <div class="col">
-                    <a class="nav-link active" href="keranjang.php" style="font-size: 28px;"><i class="bi bi-arrow-left-circle"></i></a>
+                    <a class="nav-link active" href="index_tambahorder.php?id=<?=$productid?>" style="font-size: 28px;"><i class="bi bi-arrow-left-circle"></i></a>
                 </div>
                 <div class="col" >
-                    <h1 class="fw-semibold">Keranjang</h1>
+                    <h1 class="fw-semibold">FileUpload</h1>
                 </div>
                 <div class="col">
                     <a class="nav-link " href="" style="font-size: 28px;"><i class="bi bi-search"></i></a>
@@ -55,44 +52,36 @@ $query    = mysqli_query($connect, $sql);
 		<div class="container pt-5">
 			<div class="row d-flex justify-content-center">
 				<div class="col-10 text-center">
-					<!-- <h3>Keranjang</h3> -->
-					<?php
-					while ($data = mysqli_fetch_array($query)) {
-					?>
-						<div class="card mx-auto w-75 shadow p-3 mb-3 bg-body-tertiary rounded">
-							<img src="img/<?= $data['foto'] ?>" class="card-img-top" alt="Shopping item">
-						</div>
-						<?= $data['name']; ?>
-						<?php $nego=$data['nego']; ?>
-						<p class="bg-secondary text-warning p-2 mx-auto w-75 rounded-pill" style=" max-width: 10ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><?= $data['quantity']; ?> pcs</p>
-						<h3 class="text-warning fw-bold"><?= number_format($data['total_harga'], 0, "", ".") ?></h3>
-					<?php } ?>
-
+					<form action="orderproses.php" method="post" enctype="multipart/form-data">
+						<label for="fileInput" class="card mx-auto w-100 bg-secondary rounded-pills align-items-center">
+							<img src="img/tambah.png" alt="Pilih Gambar" class="card-img-top pt-5 mt-5 pb-5 mb-5" style="width: 40%;">
+							<input id="fileInput" type="file" class="visually-hidden" name="file">
+							<p class="text-warning pb-5 mb-5">Add file .pdf .cdr .ai</p>
+						</label>
 				</div>
 			</div>
 		</div>
 
-		<!-- bawah -->
-
+		
 	</section>
-	<div class="container fixed-bottom bg-white pb-5 mb-5 mt-3">
-		<div class="row d-flex justify-content-center">
-			<div class="col-10 text-center">
-				<h5 class="mb-4">Nego</h5>
-				<form action="keranjang_proses.php" method="post">
-
-					<input class="form-control bg-secondary p-3 rounded-pill mb-4 text-warning" type="number" name="nego" value="<?=$nego?>">
-					<input type="hidden" name="keranjangid" value="<?=$keranjangid?>">
-					<input type="hidden" name="jenis" value="3">
+	<!-- bawah -->
+	<div class="container fixed-bottom bg-white pb-5 mb-5">
+			<div class="row d-flex justify-content-center">
+				<div class="col-10 text-center mt-3">
 					<div class="d-grid gap-2 pt-0">
+						<input type="hidden" name="quantity" value="<?=$quantity?>">
+						<input type="hidden" name="total_harga" value="<?=$total_harga?>">
+						<input type="hidden" name="username" value="<?=$username?>">
+						<input type="hidden" name="productid" value="<?=$productid?>">
+						
 						<button type="submit" class="btn btn-warning btn-lg text-light rounded-pill">Kirim</button>
 					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
+		<nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
 		<div class="container text-center ">
 			<div class="row gap-5 mx-auto" style="font-size:18px;">
 				<div class="col">
