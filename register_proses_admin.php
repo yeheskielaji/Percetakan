@@ -13,8 +13,8 @@
 	$query	= mysqli_query($connect, $sql) or die(mysqli_error($connect));
 
 	if($query) {
-		header("location:login.php?message=daftar_berhasil");
+		header("Location:login.php?message=daftar_berhasil");
 	} else {
-		header("location:login.php?message=failed");
+		header("Location:login.php?message=failed");
 	}
 ?>
