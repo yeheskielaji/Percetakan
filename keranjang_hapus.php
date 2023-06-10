@@ -3,7 +3,7 @@
 
     $idhapus	= $_POST['idhapus'];
 
-	$sql	= "DELETE from keranjang where keranjangid='$idhapus'";
+	$sql	= "DELETE from pesanan where keranjangid='$idhapus'";
 
 	$query	= mysqli_query($connect, $sql) or die(mysqli_error($connect)); 
 

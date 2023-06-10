@@ -60,7 +60,7 @@ $totalharga = 0;
 							<input type="hidden" name="harga" value="<?= $data['price'] ?>" id="harga" oninput="myFunction()">
 							<input type="number" oninput="myFunction()" value="1" min="1" class="bg-secondary text-warning p-2 mx-auto w-75 rounded-pill" style=" max-width: 10ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="jml" name="quantity"></input>
 							<h3 class="text-warning fw-bold mt-3"><span id="totalt"><?= $data['price'] ?></span></h3>
-							<input type="hidden" name="total_harga" value="" id="total">
+							<input type="hidden" name="total_harga" value="<?= $data['price'] ?>" id="total">
 							<input type="hidden" name="productid" value="<?= $data['productid'] ?>">
 							<!-- <input type="hidden" name="username" value="<?= $username ?>"> -->
 						<?php } ?>
