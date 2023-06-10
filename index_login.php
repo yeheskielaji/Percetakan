@@ -1,7 +1,10 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
-    ?>
+if (empty($_SESSION['username'])) {
+    header("location:login.php?message=belum_login");
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -85,11 +88,3 @@ if (isset($_SESSION['username'])) {
     </nav>
 </body>
 </html>
-
-    <?php
-} else {
-    header("location:login.php?message=belum_login");
-
-}
-?>
-
