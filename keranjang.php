@@ -20,7 +20,7 @@ $totalnego=0;
 
 </head>
 
-<body>
+<body style="font-family: 'Montserrat', sans-serif;">
     <nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
         <div class="container-fluid">
         <div class="row gap-5 mx-auto color-primary" style="font-size:18px;">
@@ -170,9 +170,6 @@ $totalnego=0;
                 while ($data1 = mysqli_fetch_array($query1)) {
                 ?>
                     <input type="hidden" name="keranjang[]" value="<?= $data1['keranjangid'] ?>">
-                    <input type="hidden" name="name[]" value="<?= $data1['name'] ?>">
-                    <input type="hidden" name="total" value="<?= $totalharga ?>">
-                    <input type="hidden" name="username" value="<?= $username ?>">
                 <?php } ?>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-warning btn-lg text-light rounded-pill">Checkout</button>

@@ -22,7 +22,7 @@ if (empty($_SESSION['username'])) {
 <body>
     <nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php" style="font-weight:bolder;">
+            <a class="navbar-brand" href="index_login.php" style="font-weight:bolder;">
                 <img src="asset/logo navbar.png" alt="logo" style="height: 30px; padding-left: 4px;"></a>
             <a class="login-min d-flex color-primary align-self-center" href="user.php" style="text-decoration: none; font-size:28px;">
                 <i class="bi bi-person-circle "></i>
@@ -46,7 +46,7 @@ if (empty($_SESSION['username'])) {
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
                         <div class="col">
-                            <a href="tambahorder.php?id=<?=$data['productid']?>" style="text-decoration: none;">
+                            <a href="index_tambahorder.php?id=<?=$data['productid']?>" style="text-decoration: none;">
                                 <div class="card mx-auto" style="width: 18rem;">
                                     <div class="foto-produk m-2 p-1" style="height:110px;">
                                         <img src="img/<?php echo $data['foto']; ?>" class="card-img-top">

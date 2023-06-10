@@ -43,8 +43,24 @@ $totalharga = 0;
 ?>
 
 <body style="font-family: 'Montserrat', sans-serif;">
-	<form action="uploadfile.php" method="post">
+<nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
+        <div class="container-fluid">
+        <div class="row gap-5 mx-auto color-primary" style="font-size:18px;">
+                <div class="col">
+                    <a class="nav-link active" href="index_login.php" style="font-size: 28px;"><i class="bi bi-arrow-left-circle"></i></a>
+                </div>
+                <div class="col" >
+                    <h1 class="fw-semibold">Order</h1>
+                </div>
+                <div class="col">
+                    <a class="nav-link " href="" style="font-size: 28px;"><i class="bi bi-search"></i></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
 
+	<form action="index_uploadfile.php" method="post" class="mt-5">
 		<section class="vh-100">
 			<div class="container pt-5">
 				<div class="row d-flex justify-content-center">

@@ -25,18 +25,33 @@ $keranjangid = $_POST['keranjangid'];
 <?php
 include('koneksi.php');
 $username = $_SESSION['username'];
-$sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, c.name, c.foto, c.price 
+$sql = "SELECT a.keranjangid, a.total_harga, a.productid, a.quantity, a.nego, c.name, c.foto, c.price 
 		FROM pesanan a INNER JOIN product c 
 		ON a.productid=c.productid AND a.keranjangid='$keranjangid' where a.username='$username';";
 
 $query    = mysqli_query($connect, $sql);
-$jumlah = 0;
-$totalharga = 0;
 ?>
 
 <body style="font-family: 'Montserrat', sans-serif;">
 
-	<section class="vh-100">
+<nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
+        <div class="container-fluid">
+        <div class="row gap-5 mx-auto color-primary" style="font-size:18px;">
+                <div class="col">
+                    <a class="nav-link active" href="keranjang.php" style="font-size: 28px;"><i class="bi bi-arrow-left-circle"></i></a>
+                </div>
+                <div class="col" >
+                    <h1 class="fw-semibold">Keranjang</h1>
+                </div>
+                <div class="col">
+                    <a class="nav-link " href="" style="font-size: 28px;"><i class="bi bi-search"></i></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+	<section class="vh-100 mt-5">
 		<div class="container pt-5">
 			<div class="row d-flex justify-content-center">
 				<div class="col-10 text-center">
@@ -48,6 +63,7 @@ $totalharga = 0;
 							<img src="img/<?= $data['foto'] ?>" class="card-img-top" alt="Shopping item">
 						</div>
 						<?= $data['name']; ?>
+						<?php $nego=$data['nego']; ?>
 						<p class="bg-secondary text-warning p-2 mx-auto w-75 rounded-pill" style=" max-width: 10ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><?= $data['quantity']; ?> pcs</p>
 						<h3 class="text-warning fw-bold"><?= number_format($data['total_harga'], 0, "", ".") ?></h3>
 					<?php } ?>
@@ -65,7 +81,7 @@ $totalharga = 0;
 				<h5 class="mb-4">Nego</h5>
 				<form action="keranjang_proses.php" method="post">
 
-					<input class="form-control bg-secondary p-3 rounded-pill mb-4 text-warning" type="number" name="nego">
+					<input class="form-control bg-secondary p-3 rounded-pill mb-4 text-warning" type="number" name="nego" value="<?=$nego?>">
 					<input type="hidden" name="keranjangid" value="<?=$keranjangid?>">
 					<input type="hidden" name="jenis" value="3">
 					<div class="d-grid gap-2 pt-0">
