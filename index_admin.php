@@ -36,27 +36,31 @@ $query    = mysqli_query($connect, $sql);
     <div class="container-fluid  bg-light">
         <div class="row align-items-start">
             <div class="col-md-2 sidebar bg-white">
-                <div>
+                <div style="list-style-type:none;">
                     <img src="asset/logo cetak.png" alt="">
-                    <a href="">
-                        <h3>Dashboard</h3>
-                    </a>
-                    <a href="index_admin_invoice.php">
-                        <h3>Invoice</h3>
-                    </a>
-                    <a href="">
-                        <h3>pending</h3>
-                    </a>
-                </div>
-                <div class="fixed-bottom text-center text-md-start justify-content-between" style="padding-bottom: 30px;">
-                    <div class="mb-3 mb-md-0" style="color:grey;">
-                        <a href="">logout<i class="bi bi-box-arrow-right"></i></a>
-                    </div>
+                    <li class="nav-item active d-flex gap-1">
+                        <img src="asset/dasboard.png" alt="">
+                        <a class="nav-link" href="index_admin.php">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                    </li>
+                    <li class="nav-item active d-flex gap-1">
+                        <img src="asset/invoice.png" alt="">
+                        <a class="nav-link" href="index_admin_invoice.php">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Invoice</span></a>
+                    </li>
+                    <li class="nav-item active d-flex gap-1 fixed-bottom mb-5">
+                        <img src="asset/logout.png" alt="">
+                        <a class="nav-link" href="index_admin_invoice.php">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Logout</span></a>
+                    </li>
                 </div>
             </div>
 
             <div class="col-md-10 content">
-                <h1 class="mb-4 mt-4">Dashboard</h1>
+                <h1 class="mb-4 mt-4" style="font-weight: bolder;">Dashboard</h1>
                 <div class="row bg-white pb-5">
                     <h5>Pesanan Pending</h5>
                     <table class="table mb-5">
