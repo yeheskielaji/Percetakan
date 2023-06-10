@@ -61,7 +61,6 @@ if (empty($_SESSION['username'])) {
         </table>
     </div>
     </div>
-   
 </body>
 
 
