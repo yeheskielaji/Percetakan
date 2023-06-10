@@ -29,7 +29,7 @@
     <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
   </div>
 
-  <div id="produk">
+  <div id="produk" class="mx-auto" style="width: 390px;">
     <div class="p-3 m-0 border-0">
       <div class="container text-center">
         <div class="row">
@@ -41,7 +41,7 @@
           while ($data = mysqli_fetch_array($query)) {
           ?>
             <div class="col">
-              <a href=index_admin_edit.php style="text-decoration: none;">
+              <a href=login.php style="text-decoration: none;">
                 <div class="card mx-auto" style="width: 18rem;">
                   <div class="foto-produk m-2 p-1" style="height:110px;">
                     <img src="img/<?php echo $data['foto']; ?>" class="card-img-top">
@@ -63,7 +63,7 @@
 
   <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
     <div class="container text-center ">
-      <div class="row gap-5 mx-auto" style="font-size:18px;">
+      <div class="row gap-4 mx-auto" style="font-size:18px;">
         <div class="col">
           <a class="nav-link active" aria-current="page" href="index.php"><i class="bi bi-house "></i></a>
         </div>

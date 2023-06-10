@@ -34,7 +34,7 @@ if (empty($_SESSION['username'])) {
         <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
     </div>
-    <div id="produk">
+    <div id="produk" class="mx-auto" style="width: 390px;">
         <div class="p-3 m-0 border-0 mb-5">
             <div class="container text-center">
                 <div class="row">
@@ -67,7 +67,7 @@ if (empty($_SESSION['username'])) {
 
     <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
         <div class="container text-center ">
-            <div class="row gap-5 mx-auto" style="font-size:18px;">
+            <div class="row gap-4 mx-auto" style="font-size:18px;">
                 <div class="col">
                     <a class="nav-link active" aria-current="page" href="index_login.php"><i class="bi bi-house "></i></a>
                 </div>

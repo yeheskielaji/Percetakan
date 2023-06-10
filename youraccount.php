@@ -60,7 +60,7 @@ $totalnego=0;
 
     <nav class="navbar fixed-bottom bg-body-tertiary" style="height:60px; background: white;">
         <div class="container text-center ">
-            <div class="row gap-5 mx-auto" style="font-size:18px;">
+            <div class="row gap-4 mx-auto" style="font-size:18px;">
                 <div class="col">
                     <a class="nav-link active" aria-current="page" href="index_login.php"><i class="bi bi-house "></i></a>
                 </div>
