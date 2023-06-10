@@ -88,11 +88,3 @@ if (empty($_SESSION['username'])) {
     </nav>
 </body>
 </html>
-
-    <?php
-} else {
-    header("location:login.php?message=belum_login");
-
-}
-?>
-
