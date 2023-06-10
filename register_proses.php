@@ -7,9 +7,6 @@
 	$telp	  = $_POST['konfirmasi'];
 	$level	  = "";
 
-	// if($password =! $konfirmasi){
-	// 	header("location:login.php?message=password tidak sama");
-	// }
 
 	$sql = "INSERT INTO user VALUES('$username','$password','$level')";
 

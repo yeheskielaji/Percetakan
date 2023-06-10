@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-outline mb-5">
-                            <input type="text" name="konfirmasi" id="form3Example4" class="form-control form-control-lg rounded-pill" placeholder="Konfirmasi Password" />
+                            <input type="password" name="konfirmasi" id="form3Example4" class="form-control form-control-lg rounded-pill" placeholder="Konfirmasi Password" />
                         </div>
 
                         <div class="text-center text-lg-start mt-5">
