@@ -35,6 +35,13 @@
             // alihkan ke halaman dashboard pegawai
             header("location:index_login.php");
     
+        }else if($data['level']=="desain"){
+            // buat session login dan username
+            $_SESSION['username'] = $username;
+            $_SESSION['level'] = "desain";
+            // alihkan ke halaman dashboard pegawai
+            header("location:index_desainer.php");
+    
         }else{
     
             // alihkan ke halaman login kembali

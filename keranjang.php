@@ -161,7 +161,7 @@ $totalnego=0;
             <h5 class="card-text pb-2">
                 <div class="d-flex justify-content-between">
                     <div>Total</div>
-                    <div><?= number_format($totalharga, 0, "", ".") ?></div>
+                    <div><?= number_format($totalharga-$totalnego, 0, "", ".") ?></div>
                 </div>
             </h5>
             <form action="keranjang_checkout.php" method="post">
