@@ -36,7 +36,7 @@ $query    = mysqli_query($connect, $sql);
 
 <nav class="navbar fixed-top mx-auto" style="height:60px; background: white;">
         <div class="container-fluid">
-        <div class="row gap-5 mx-auto color-primary" style="font-size:18px;">
+        <div class="row gap-4 mx-auto color-primary" style="font-size:18px;">
                 <div class="col">
                     <a class="nav-link active" href="keranjang.php" style="font-size: 28px;"><i class="bi bi-arrow-left-circle"></i></a>
                 </div>

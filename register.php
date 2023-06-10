@@ -16,6 +16,15 @@
                     <div class="mx-auto pb-5 mb-5 text-center">
                         <h1 style="font-weight: bolder;">Buat Akun</h1>
                     </div>
+                    <div class="text-center pb-1 fw-bold" style="color:red;">
+                        <?php
+                        if (isset($_GET['message'])) {
+                            if ($_GET['message'] == "beda") {
+                                echo "Password Tidak Sama.";
+                            }
+                        }
+                        ?>
+                    </div>
                     <form>
                         <!-- Email input -->
                         <div class="form-outline mb-4 mt-2"> 
@@ -29,7 +38,7 @@
                         </div>
 
                         <div class="form-outline mb-5">
-                            <input type="text" name="konfirmasi" id="form3Example4" class="form-control form-control-lg rounded-pill" placeholder="Konfirmasi Password" />
+                            <input type="password" name="konfirmasi" id="form3Example4" class="form-control form-control-lg rounded-pill" placeholder="Konfirmasi Password" />
                         </div>
 
                         <div class="text-center text-lg-start mt-5">
