@@ -23,13 +23,13 @@ if (empty($_SESSION['username'])) {
     <div class="col-2">
         <div>
             <img src="asset/logo cetak.png" alt="">
-            <a href=""><h3>Dashboard</h3></a>
-            <a href=""><h3>Invoice</h3></a>
-            <a href=""><h3>pending</h3></a>
+            <a href="" style="text-decoration: none;"><h3>Dashboard</h3></a>
+            <a href="" style="text-decoration: none;"><h3>Invoice</h3></a>
+            <a href="" style="text-decoration: none;"><h3>pending</h3></a>
         </div>
         <div class="fixed-bottom text-center text-md-start justify-content-between" style="padding-bottom: 30px;">
             <div class="mb-3 mb-md-0" style="color:grey;">
-                <a href="">logout<i class="bi bi-box-arrow-right"></i></a>
+                <a href="" style="text-decoration: none;">logout<i class="bi bi-box-arrow-right"></i></a>
             </div>
         </div>
     </div>
