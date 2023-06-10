@@ -50,9 +50,9 @@ $query    = mysqli_query($connect, $sql);
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Invoice</span></a>
                     </li>
-                    <li class="nav-item active d-flex gap-1 fixed-bottom mb-5">
+                    <li class="nav-item active d-flex gap-1 fixed-bottom mb-5 pl-2">
                         <img src="asset/logout.png" alt="">
-                        <a class="nav-link" href="index_admin_invoice.php">
+                        <a class="nav-link" href="logout.php">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Logout</span></a>
                     </li>
